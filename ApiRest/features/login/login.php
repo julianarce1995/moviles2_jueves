@@ -7,7 +7,6 @@ if( $_SERVER['REQUEST_METHOD'] == "GET"){
     $query = "SELECT * FROM users ";
     $users = $dbConnection->query($query)->fetchAll(PDO::FETCH_ASSOC);
     echo(json_encode($users));
-
 }
 else{
     echo "parce no se puede";
