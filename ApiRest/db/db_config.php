@@ -11,6 +11,7 @@ class DBConfig{
             $dsn = "mysql:host=$this->host;dbname=$this->dbName";
             $connection = new PDO($dsn,$this->user, $this->password);
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $connection;
             echo "Conexión exitosa";
         }catch(PDOException $exception){
             echo "Error en la db". $exception->getMessage();
